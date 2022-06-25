@@ -1,34 +1,34 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ray
+  name: relaxing
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ray
+      app: relaxing
   template:
     metadata:
       labels:
-        app: ray
+        app: relaxing
     spec:
       containers:
-      - image: okteto.dev/ray:latest
-        name: ray
+      - image: okteto.dev/relaxing:latest
+        name: relaxing
         ports:
         - containerPort: 8080
         env:
         - name: PORT
           value: "8080"
         - name: ProxySite
-          value: "$ProxySite"
+          value: "mirror.umd.edu"
         - name: Vless_UUID
-          value: "$Vless_UUID"
+          value: "0f046c2c-2766-447b-ac92-6d88f87ad198"
         - name: Vless_Path
-          value: "$Vless_Path"
+          value: "/s233"
         - name: Vmess_UUID
-          value: "$Vmess_UUID"
+          value: "da5aa6ac-ecf9-496b-8a63-77189cd401a1"
         - name: Vmess_Path
-          value: "$Vmess_Path"
+          value: "/s244"
         - name: Share_Path
-          value: "$Share_Path"
+          value: "/share233"
